@@ -1440,3 +1440,45 @@ h4 {
 .pages a:hover {
     background: var(--color-accent);
 }
+/* --- LEGAL PAGES STYLES --- */
+.pages {
+    padding: 160px 0 100px;
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    min-height: 80vh;
+}
+
+.pages h1 {
+    font-size: clamp(24px, 5vw, 48px);
+    margin-bottom: 40px;
+    border-bottom: 4px solid var(--color-accent);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.pages h2 {
+    font-size: 24px;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+}
+
+.pages p {
+    margin-bottom: 20px;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.pages ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.pages ul li {
+    list-style: square;
+    margin-bottom: 10px;
+    color: var(--color-text-muted);
+}
+
+.pages ul li::marker {
+    color: var(--color-accent);
+}
