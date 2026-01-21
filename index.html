@@ -14,8 +14,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script type="module" crossorigin src="/delta-mint/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/delta-mint/assets/styles-CbonxhoA.css">
+    <link rel="stylesheet" crossorigin href="/delta-mint/assets/styles-CSAUsDFl.css">
   </head>
   <body>
     <header class="header">
@@ -48,7 +50,164 @@
     <main>
       <div id="dynamic-content"></div>
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+    <div class="container hero__container">
+        <div class="hero__content">
+            <div class="badge" data-aos="fade-right">Платформа года в Европе</div>
+            <h1 class="hero__title">
+                AI инструменты <br>
+                <span class="text-outline">для реальных</span> <br>
+                задач
+            </h1>
+            <p class="hero__subtitle">
+                Технологии нового поколения, которые работают на вас. Легко разобраться без опыта. Пошаговый путь,
+                понятный каждому.
+            </p>
+            <div class="hero__actions">
+                <a href="#contact" class="btn btn--primary">Начать сейчас</a>
+                <a href="#about" class="btn btn--secondary">Узнать детали</a>
+            </div>
+        </div>
+
+        <div class="hero__visual">
+            <canvas id="canvas-webgl"></canvas>
+            <div class="hero__stats">
+                <div class="stat-item">
+                    <span class="stat-num">24/7</span>
+                    <span class="stat-text">Экспертная поддержка</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">2 мин</span>
+                    <span class="stat-text">Быстрый старт</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__line"></div>
+</section>
+<section class="about" id="about">
+    <div class="container">
+        <div class="about__header">
+            <div class="section-label" data-aos="fade-down">/ 01 О ПЛАТФОРМЕ</div>
+            <h2 class="about__main-title" data-aos="fade-up">
+                Технологии, которые <br>
+                <span class="text-mint">работают на вас</span>
+            </h2>
+        </div>
+
+        <div class="about__grid">
+            <div class="about__card" data-aos="fade-up" data-aos-delay="100">
+                <div class="about__num">01</div>
+                <h3 class="about__card-title">Быстрый и лёгкий старт</h3>
+                <p class="about__card-text">
+                    Забудьте о сложных настройках. Подключение занимает 2 минуты. Мы создали среду, где ИИ адаптируется
+                    под ваши нужды, а не наоборот.
+                </p>
+                <div class="about__icon">
+                    <i data-lucide="zap"></i>
+                </div>
+            </div>
+
+            <div class="about__card about__card--accent" data-aos="fade-up" data-aos-delay="200">
+                <div class="about__num">02</div>
+                <h3 class="about__card-title">AI-инструменты для задач</h3>
+                <p class="about__card-text">
+                    От автоматизации рутины до генерации идей. Практики, применимые уже сегодня, позволяют сэкономить до
+                    40% вашего времени.
+                </p>
+                <div class="about__icon">
+                    <i data-lucide="cpu"></i>
+                </div>
+            </div>
+
+            <div class="about__card" data-aos="fade-up" data-aos-delay="300">
+                <div class="about__num">03</div>
+                <h3 class="about__card-title">Доступ в Европе</h3>
+                <p class="about__card-text">
+                    Платформа уже доступна в странах ЕС. Мы обеспечиваем экспертную поддержку на всех этапах вашего
+                    погружения в мир нейросетей.
+                </p>
+                <div class="about__icon">
+                    <i data-lucide="globe"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="about__footer" data-aos="zoom-in">
+            <p class="about__footer-text">Доступ к платформе открыт для всех категорий пользователей.</p>
+            <div class="about__footer-line"></div>
+        </div>
+    </div>
+</section>
+<section class="benefits" id="benefits">
+    <div class="container">
+        <div class="benefits__top">
+            <div class="section-label">/ 02 ВАША ВЫГОДА</div>
+            <h2 class="benefits__title">Решения, которые <br>меняют правила игры</h2>
+        </div>
+
+        <div class="swiper benefits-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide benefit-card">
+                    <div class="benefit-card__content">
+                        <span class="benefit-card__tag">Продуктивность</span>
+                        <h3 class="benefit-card__title">Постройте карьеру, которая работает на вас</h3>
+                        <p class="benefit-card__text">Используйте AI для анализа данных и написания кода. Получите
+                            экспертную поддержку на всех этапах профессионального роста.</p>
+                        <div class="benefit-card__footer">
+                            <span class="benefit-card__link">Оценить перспективы <i
+                                    data-lucide="arrow-up-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide benefit-card benefit-card--dark">
+                    <div class="benefit-card__content">
+                        <span class="benefit-card__tag">Финансы</span>
+                        <h3 class="benefit-card__title">Технология для пассивного дохода</h3>
+                        <p class="benefit-card__text">Стратегия роста на базе инноваций. Мы покажем, как настроить
+                            алгоритмы для автоматизации вашего заработка в цифровой среде.</p>
+                        <div class="benefit-card__footer">
+                            <span class="benefit-card__link">Узнать детали <i data-lucide="arrow-up-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide benefit-card">
+                    <div class="benefit-card__content">
+                        <span class="benefit-card__tag">Личное</span>
+                        <h3 class="benefit-card__title">Воплотите мечты в реальность</h3>
+                        <p class="benefit-card__text">От планирования путешествий по Италии до создания персональных
+                            программ обучения. Расширьте горизонты своего проекта.</p>
+                        <div class="benefit-card__footer">
+                            <span class="benefit-card__link">Начать путь <i data-lucide="arrow-up-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide benefit-card benefit-card--mint">
+                    <div class="benefit-card__content">
+                        <span class="benefit-card__tag">Будущее</span>
+                        <h3 class="benefit-card__title">Переосмыслите подход к развитию</h3>
+                        <p class="benefit-card__text">Методологии, доказавшие эффективность. Платформа уже доступна в
+                            Европе для тех, кто ищет быстрый и лёгкий старт.</p>
+                        <div class="benefit-card__footer">
+                            <span class="benefit-card__link">Запросить доступ <i
+                                    data-lucide="arrow-up-right"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="footer">
@@ -113,6 +272,14 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
   </body>
 </html>
