@@ -139,3 +139,108 @@ const swiper = new Swiper('.benefits-slider', {
 
 // Обновляем иконки Lucide для новых элементов
 lucide.createIcons();
+// Логика аккордеона
+const accordionItems = document.querySelectorAll('.accordion__item');
+const innovationImg = document.getElementById('innovation-img');
+
+accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion__header');
+    
+    header.addEventListener('click', () => {
+        // Убираем активный класс у всех
+        accordionItems.forEach(i => i.classList.remove('active'));
+        
+        // Добавляем текущему
+        item.classList.add('active');
+        
+        // Эффект смены картинки (имитация)
+        if (innovationImg) {
+            innovationImg.style.opacity = '0';
+            setTimeout(() => {
+                // В реальном проекте здесь менялся бы src на item.dataset.img
+                innovationImg.style.opacity = '1';
+            }, 300);
+        }
+    });
+});
+// Эффект легкого наклона карточек обучения
+const cards = document.querySelectorAll('.edu-card');
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        
+        const dx = (x - xc) / 20;
+        const dy = (y - yc) / 20;
+        
+        card.style.transform = `translateY(-10px) rotateX(${-dy}deg) rotateY(${dx}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = `translateY(0) rotateX(0) rotateY(0)`;
+    });
+});
+
+// Переинициализация иконок
+lucide.createIcons();
+// ГЕНЕРАЦИЯ КАПЧИ
+const captchaQuestion = document.getElementById('captcha-question');
+let captchaResult;
+
+function generateCaptcha() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    captchaResult = a + b;
+    if (captchaQuestion) captchaQuestion.innerText = `${a} + ${b}`;
+}
+
+generateCaptcha();
+
+// ВАЛИДАЦИЯ ТЕЛЕФОНА (Только цифры)
+const phoneInput = document.getElementById('phone');
+phoneInput.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+});
+
+// AJAX ОТПРАВКА (Имитация)
+const contactForm = document.getElementById('ai-contact-form');
+const successMessage = document.getElementById('form-success');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const userAnswer = parseInt(document.getElementById('captcha-answer').value);
+
+    if (userAnswer !== captchaResult) {
+        alert('Ошибка капчи. Пожалуйста, решите пример правильно.');
+        generateCaptcha();
+        return;
+    }
+
+    // Имитация задержки сервера
+    const submitBtn = contactForm.querySelector('button');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = 'ОТПРАВКА...';
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+        // Показываем сообщение об успехе
+        successMessage.style.display = 'flex';
+        gsap.from(successMessage, { opacity: 0, y: 20, duration: 0.5 });
+        
+        // Сбрасываем форму через время
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+            contactForm.reset();
+            submitBtn.innerText = originalText;
+            submitBtn.disabled = false;
+            generateCaptcha();
+        }, 5000);
+    }, 1500);
+});
+
+lucide.createIcons();
