@@ -1384,3 +1384,59 @@ h4 {
     opacity: 0;
     transform: translateY(20px);
 }
+/* Дополнение для страниц документов */
+.pages {
+    background: #ffffff;
+    border-top: 1px solid var(--color-dark);
+}
+
+.pages h1 {
+    font-family: var(--font-heading);
+    background: var(--color-dark);
+    color: var(--color-accent);
+    padding: 10px 20px;
+    display: inline-block;
+    margin-bottom: 50px;
+    transform: skew(-5deg);
+    /* Антидизайн эффект */
+}
+
+.pages h2 {
+    color: var(--color-dark);
+    border-left: 5px solid var(--color-accent);
+    padding-left: 15px;
+    margin-top: 50px;
+    font-size: 1.5rem;
+}
+
+.pages p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    color: #333;
+}
+
+.pages ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+.pages ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.pages a {
+    color: var(--color-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    font-weight: 600;
+}
+
+.pages a:hover {
+    background: var(--color-accent);
+}
